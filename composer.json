@@ -1,0 +1,31 @@
+{
+    "name": "codeinfo/laravel-bytedance",
+    "description": "bytedance api",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "nanye",
+        "email": "nanye@codeinfo.cn"
+      }
+    ],
+    "require": {
+      "php": "^7.4",
+      "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+      "laravel/framework": "^6.2",
+      "friendsofphp/php-cs-fixer": "^2.16"
+    },
+    "autoload": {
+      "psr-4": {
+        "Codeinfo\\LaravelKuaishou\\": "src/"
+      }
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+            "Codeinfo\\LaravelKuaishou\\ServiceProvider"
+        ]
+      }
+    }
+}
