@@ -44,6 +44,29 @@ class Oauth extends Client
     }
 
     /**
+     * 生成手机二维码 线下物料有效期1年 每次请求重新生成
+     *
+     * @param string $scope
+     * @param string $redirect_uri
+     * @param string $state
+     * @return void
+     */
+    public function qrcode(string $scope, string $redirect_uri = null, string $type = 'path', string $state = null)
+    {
+        $query = [
+            'app_id' => $this->app['config']['app_id'],
+            'scope' => $scope,
+            'response_type' => 'code',
+            'redirect_uri' => is_null($redirect_uri) ? $this->app['config']['redirect_uri'] : $redirect_uri,
+            'type' => $type,
+        ];
+
+        $response = $this->httpGet($this->baseUri . '/oauth2/qr_code', $query);
+
+        return self::resource($response);
+    }
+
+    /**
      * 获取用户授权token.
      *
      * @param string $code

@@ -65,6 +65,7 @@ class Request
 
         return array_merge($options, [
             'debug' => false,
+            // 'allow_redirects' => true,
         ]);
     }
 
