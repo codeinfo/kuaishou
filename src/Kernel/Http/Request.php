@@ -84,8 +84,6 @@ class Request
             $options['base_uri'] = $this->baseUri;
         }
 
-        dd($this->baseClient());
-
         return $this->baseClient()->request($method, $url, self::initOptions($options));
     }
 }
