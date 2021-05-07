@@ -9,6 +9,7 @@ return [
 
         'redirect_uri' => env('KUAISHOU_PLATFORM_REDIRECT_URI', ''),
 
+        'timeout' => 60.0,
     ],
 
 ];

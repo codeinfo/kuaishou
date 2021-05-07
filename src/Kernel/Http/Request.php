@@ -31,6 +31,7 @@ class Request
 
     public function __construct()
     {
+        $this->timeout = config('kuaishou.http.timeout', 20.0);
     }
 
     /**
@@ -82,6 +83,8 @@ class Request
         if (property_exists($this, 'baseUri') && !is_null($this->baseUri)) {
             $options['base_uri'] = $this->baseUri;
         }
+
+        dd($this->baseClient());
 
         return $this->baseClient()->request($method, $url, self::initOptions($options));
     }
