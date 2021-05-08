@@ -24,5 +24,3 @@
 ### getUserInfo 获取用户信息
 
     $app->oauth->userInfo($access_token);
-
-
